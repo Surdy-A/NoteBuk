@@ -9,13 +9,18 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install S_Noteo
 ```bash
 *Clone the project
 git clone <S_NoteBook repo_link>
+
 *Create virtual environment
+
 *Install dependencies
 pip install -r requirements.txt
+
 *Make migrations
 python manage.py makemigrations
+
 *Migrate
 python manage.py migrate
+
 *Start the development server
 python manage.py runserver
 ```
