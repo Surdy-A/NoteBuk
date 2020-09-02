@@ -32,7 +32,7 @@ Please make sure to update tests as appropriate.
 
 
 ## Contact
-Do you have a project you want me to work on. Please contact me.
-Phone: 08039749738 or 07053465291
-Email: sodiq.ajayi@yahoo.com
+Do you have a project you want me to work on. Please contact me.<br>
+Phone: 08039749738 or 07053465291 <br>
+Email: sodiq.ajayi@yahoo.com <br>
 [Ajayi Sodiq](http://sodeeqajayi.pythonanywhere.com/)
