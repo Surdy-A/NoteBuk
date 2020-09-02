@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Notes
+{% endblock title %}
+
+
+{% block content %}
+<main id="main">
+  <section id="icon-boxes" class="icon-boxes"></section>
+  <!-- End Icon Boxes Section -->
+  <!-- ======= Note Search Section ======= -->
+  <section id="services" class="services">
+    <div class="container my-5" data-aos="fade-up">
+      <div class="section-title">
+        {% include 'note/search.html' %}
+        <h2>{{user}}'s Notes</h2>
+        <p>
+          Create, access and share your notes the way your like.
+        </p>
+      </div>
+
+      <div class="row">
+
+        {% for note in note_search_list %}
+        <div class="col-md-6 d-flex align-items-stretch  mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box">
+            <i class="icofont-computer bg-success"></i>
+            <h4><a href="{% url 'note:note_detail' note.pk %}">{{note.title}}</a></h4>
+            <p>
+              {{note.note}}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- Note Search Section -->
+</main>
+<!-- End #main -->
+{% endblock content %}

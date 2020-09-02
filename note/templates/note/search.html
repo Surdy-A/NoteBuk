@@ -1,0 +1,15 @@
+<!-- search form -->
+<form class="form-group" action="{% url 'note:search_results' %}" value="{{request.GET.q}}" method="get">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header__search-content">
+                    <input name="q" type="text" placeholder="Search for a note">
+
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- search form end -->

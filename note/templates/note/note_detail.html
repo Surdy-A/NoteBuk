@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load social_share %}
+{% block content %}
+
+<main id="main">
+    <!-- ======= Note Detail Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-8 entries">
+                    <article class="entry entry-single">
+                        <div class="entry-img">
+                            <img src="assets/img/blog-1.jpg" alt="" class="img-fluid">
+                        </div>
+                        <h2 class="entry-title">
+                            <p>{{note.title}}</p>
+                        </h2>
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="icofont-user"></i> {{note.author}}
+                                </li>
+                                <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i><time
+                                        datetime="2020-01-01">{{note.created |date:"F j, Y"}}</time></li>
+                                <li class="d-flex align-items-center"><i class="icofont-comment"></i>{{note.category}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="entry-content">
+                            <p>
+                                {{note.note}}
+                            </p>
+                        </div>
+                        <div class="entry-footer clearfix">
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="icofont-twitter"></i>
+                                        {% post_to_twitter object_or_url "Post to Twitter" %}
+                                    </li>
+
+                                    <li class="d-flex align-items-center"><i
+                                            class="icofont-facebook"></i>{% post_to_facebook object_or_url %}
+                                    </li>
+                                    <li class="d-flex align-items-center"><i
+                                            class="icofont-linkedin"></i>{% post_to_linkedin object_or_url %}
+                                    </li>
+                                    <li class="d-flex align-items-center"><i
+                                            class="icofont-telegram"></i>{% post_to_telegram "{{user}}'s Note': {{note.title}}" object_or_url %}
+                                    </li>
+
+                                    <li class="d-flex align-items-center"><i
+                                            class="icofont-mail"></i>{% send_email object.title "Note: {{object.title}}. Check it out!" object_or_url "Share via email" %}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article><!-- End blog entry -->
+                </div><!-- End blog entries list -->
+            </div>
+        </div>
+    </section><!-- Note Detail Section -->
+</main><!-- End #main -->
+{% endblock content %}
